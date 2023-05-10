@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto</title>
+	<link rel="icon" href="assests/Img/bitcoin-logo.icon">
+    <link rel="stylesheet" href="assests/css/Nav.css">
+    <link rel="stylesheet" href="assests/css/Crypto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="ticker-tape">
+      <div class="ticker-container">
+        <span class="ticker-item"   > BTC: <span id="btc-price"></span></span>
+        <span class="ticker-item">ETH: <span id="eth-price"></span></span>
+        <span class="ticker-item">DOT: <span id="dot-price"></span></span>
+        <span class="ticker-item">SOL: <span id="sol-price"></span></span>
+      </div>
+    </div>
+    
+    <!-- JavaScript code -->
+    <script>
+      const btcPriceElement = document.getElementById('btc-price');
+      const ethPriceElement = document.getElementById('eth-price');
+      const dotPriceElement = document.getElementById('dot-price');
+      const solPriceElement = document.getElementById('sol-price');
+    
+      const btcWs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade');
+      const ethWs = new WebSocket('wss://stream.binance.com:9443/ws/ethusdt@trade');
+      const dotWs = new WebSocket('wss://stream.binance.com:9443/ws/dotusdt@trade');
+      const solWs = new WebSocket('wss://stream.binance.com:9443/ws/solusdt@trade');
+      btcWs.onmessage = (event) => {
+        const priceData = JSON.parse(event.data);
+        btcPriceElement.innerText = parseFloat(priceData.p).toFixed(2);
+      };
+    
+      ethWs.onmessage = (event) => {
+        const priceData = JSON.parse(event.data);
+        ethPriceElement.innerText = parseFloat(priceData.p).toFixed(2);
+      };
+    
+      dotWs.onmessage = (event) => {
+        const priceData = JSON.parse(event.data);
+        dotPriceElement.innerText = parseFloat(priceData.p).toFixed(2);
+      };
+    
+      solWs.onmessage = (event) => {
+        const priceData = JSON.parse(event.data);
+        solPriceElement.innerText = parseFloat(priceData.p).toFixed(2);
+      };
+    
+    
+    
+    </script>
+    
+    
+    
+    
+    
+
+<div class="video-container">
+
+
+    <div class="content">
+      <h1>Buy & <br>Sell <span>Crypto</span></h1>
+      <p>World's biggest Cryptocurrency exchange available...</p>
+      <a href="chart.html" class="btn">see chart</a>
+    </div>
+
+<!-- 
+    <video autoplay loop muted plays-inline class="BG-vid">
+      <source src="/disc/assests/Img/IMG_4459.mp4" type="video/MP4">
+    </video> -->
+
+
+
+</div>
+    <header>
+
+      
+      <a href="#" class="brand"  alt="finance website"><img class="logo-img" src="assests/Img/bitcoin-logo.png" width="28" height="28"><span>F I N A N C E</span></a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+			<div class="navigation-items">
+				<a href="#">Home</a>
+				<a href="#">About</a>
+				<a target="_blank" href="/disc/Crypto.html">Crypto</a>
+				<a href="#">Forex</a>
+				<a href="#">Contact</a>
+		  <a href="/disc/login.html" class="btn btn-outline">Login</a>
+		</div>
+      </div>
+
+
+
+      
+    </header>
+
+
+    <div class="crypto-list">
+        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener" target="_blank"><span class="blue-text">Crypto markets</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+    
+  {
+  "width": 1000,
+  "height": 490,
+  "defaultColumn": "overview",
+  "screener_type": "crypto_mkt",
+  "displayCurrency": "USD",
+  "colorTheme": "light",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
+      

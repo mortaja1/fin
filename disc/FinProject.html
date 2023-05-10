@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance</title>
+	<link rel="icon" href="assests/Img/bitcoin-logo.icon">
+    <link rel="stylesheet" href="assests/css/Fin.css">
+    <link rel="stylesheet" href="assests/css/Nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand"  alt="finance website"><img class="logo-img" src="assests/Img/bitcoin-logo.png" width="28" height="28"><span>F I N A N C E</span></a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+			<div class="navigation-items">
+        <ul></ul>
+        <a href="#">Home</a>
+				<a href="#">About</a>
+				<a target="_blank" href="/disc/Crypto.html">Crypto</a>
+				<a href="#">Forex</a>
+				<a href="#">Contact</a>
+		    <a href="/disc/login.html" class="btn btn-outline"  id="loginbot">Login</a>
+    <div id="logout"><button style="background-color:#5ab3ae;" >logout</button></div>
+     <div id="disemail"> </div>
+		
+		</div>
+    </div>
+    </header>
+
+    <section class="home">
+		<video class="video-slide active" src="assests/Img/BG3.MP4" autoplay muted loop></video>
+		<video class="video-slide" 		    src="assests/Img/BG4.mp4" autoplay muted loop></video>
+		<video class="video-slide" 		    src="assests/Img/BG9.mp4" autoplay muted loop></video>
+		<video class="video-slide" 		    src="assests/Img/BG6.mp4" autoplay muted loop></video>
+		<video class="video-slide" 		    src="assests/Img/BG7.mp4" autoplay muted loop></video>
+
+      <div class="content active">
+        <h1><span style="font-weight:500; color: #8cddd9;">F I N A N C E</span>
+			<br><span style="font-weight: 300; font-size: 50px;">We'll make you a millionair..</span>
+		</h1>
+        <p>We offer a range of solutions to help you reach your financial goals. Our experienced advisors provide personalized guidance to support you along the way. Explore our services and contact us to learn more. Thank you for choosing us as your trusted financial partner.</p>
+        <a href="/disc/login.html">Join us</a>
+      </div>
+      <div class="content">
+        <h1><span style="font-weight:500; color: #8cddd9;">About Us</span>
+			<br><span style="font-weight: 300; font-size: 50px;">What  we do...</span>
+		</h1>
+        <p>we're dedicated to helping individuals and businesses achieve financial success. With years of experience in the industry, our team provides tailored advice and support to meet the unique needs of our clients. We're committed to integrity, transparency, and your financial well-being. </p>
+        <a target="_blank" href="/disc/login.html">Learn more</a>
+      </div>
+      <div class="content">
+        <h1><span style="font-weight:500; color: #8cddd9;">Crypto</span>
+			<br><span style="font-weight: 300; font-size: 50px;">Here we work</span>
+		</h1>
+        <p>Cryptocurrency is a digital currency that uses encryption techniques for security. Our team has extensive experience in the cryptocurrency market and can provide expert guidance on investing and managing these assets, we also help you to get dealing with them so tou will be an expert.</p>
+        <a href="disc/Crypto.html">Check them</a>
+      </div>
+      <div class="content">
+        <h1><span style="font-weight:500; color: #8cddd9;">Forex</span>
+			<br><span style="font-weight: 300; font-size: 50px;">Know other currencies</span>
+		</h1>
+        <p>Forex is the largest and most liquid financial market in the world, involving the buying and selling of different currencies. Our team has extensive experience in Forex trading and can provide expert guidance. </p>
+        <a href="/disc/login.html">See more currencies</a>
+      </div>
+      <div class="content">
+        <h1><span style="font-weight:500; color: #8cddd9;">Contact us</span>
+			<br><span style="font-weight: 300; font-size: 50px;">Connect us as well</span>
+		</h1>
+        <p>We welcome all inquiries and feedback. Contact us by phone, email, or through our website's contact form. Our team is always here to help and aims to respond as quickly as possible.</p>
+        <a href="/disc/login.html">Contact us</a>
+      </div>
+      <!--<div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>-->
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+
+
+
+
+
+
+<!-- -------------------------------------------------------------firebase fun------------------------------------------------------------->
+
+<script type="module" >
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+  import { 
+  getAuth ,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendEmailVerification,
+  onAuthStateChanged,
+  signOut,
+  deleteUser
+  }from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js"
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBOIJm1q698o1rco1VQyMHTuS1GDKVEt9c",
+    authDomain: "pre1-ebc72.firebaseapp.com",
+    projectId: "pre1-ebc72",
+    storageBucket: "pre1-ebc72.appspot.com",
+    messagingSenderId: "1074051314058",
+    appId: "1:1074051314058:web:2c80db352265eda25e5873"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth =getAuth(app);
+  
+  const logoutbut =document.querySelector("#logout");
+  const loginbut =document.querySelector("#loginbot");
+  
+  
+  
+  logoutbut.style.display ='none';
+  loginbut.style.display ='none';
+  
+  
+  const userlogout =async() =>
+  {
+  await signOut(auth);
+  }
+  
+  logoutbut.addEventListener('click',userlogout);
+  
+  
+  const checkauth = async() => {
+  onAuthStateChanged(auth ,user =>{
+      if (user) {
+  
+  
+  
+  
+  
+  
+  
+      if (user.emailVerified) {
+        window.location.href = "#";
+      } else {
+  
+  
+          // verify email box
+          var popup = document.createElement('div');
+        popup.innerHTML = '<p style=" font-family: Roboto ">Please verify your email</p><p style="font-size: smaller;">If you don\'t, your account will be deleted in 10 minutes</p>';
+        popup.style.backgroundColor = 'white';
+        popup.style.color = 'black';
+        popup.style.position = 'fixed';
+        popup.style.top = '-100px'; 
+        popup.style.left = '50%';
+        popup.style.transform = 'translate(-50%, 0)';
+        popup.style.padding = '20px';
+        popup.style.boxShadow = '10px 10px 10px 10px rgba(0, 0, 0, 0.5)';
+        popup.style.transition = 'top 0.3s ease-in-out'; 
+       
+       
+        document.body.appendChild(popup);
+        
+      
+        setTimeout(function() {
+          popup.style.top = '50%'; 
+        }, 100); // delay by 1 second
+        
+        // Set timeout to remove popup after 30 seconds and animate it out of view
+        setTimeout(function() {
+          popup.style.top = '-100px';
+          setTimeout(function() {
+            popup.remove(); // remove element from DOM after animation completes
+          }, 300); // delay by 0.3 seconds to allow for animation
+        }, 5000);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        console.log("Please verify your email");
+  
+        setTimeout(() => {
+        deleteUser(user).then(() => {
+        console.log("User account deleted");
+        }).catch((error) => {
+              console.error(error);
+        });
+          }, 600000); // 10 minute in milliseconds
+      
+  
+  
+  
+  
+  
+      }
+  
+  
+  
+  
+      //display useremail 
+          const disem =document.querySelector("#disemail");
+          disem.innerHTML=user.email;
+  
+  
+  
+  logoutbut.style.display='block';
+  loginbut.style.display ='none';
+      }
+      else{
+      logoutbut.style.display='none';
+      loginbut.style.display ='block';
+      disem.style.display='none';
+  }
+  })
+  }
+  
+  checkauth();
+  
+  
+  
+  
+      </script>
+
+  </body>
+</html>
+      

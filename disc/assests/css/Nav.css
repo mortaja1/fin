@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header{
+  z-index: 999;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 200px;
+  transition: 0.5s ease;
+}
+
+header .brand{
+  color: #f8f9fa;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.logo-img{
+	margin-right: 5px;
+	padding-top: 2px;
+}
+
+header .navigation{
+  position: relative;
+}
+
+header .navigation .navigation-items a{
+  position: relative;
+  color: #f8f9faff;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before{
+  content: '';
+  position: absolute;
+  background: #5ab3ae;
+  color: #5ab3ae;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: 0.4s ease;
+}
+
+header .navigation .navigation-items a:hover:before{
+  width: 100%;
+  color:#5ab3ae;
+}
+
+header .navigation .navigation-items a:hover{
+	color:#70b6b2;
+}
+
+
+.btn-outline {
+
+    border: 1px solid #f8f9fa;
+    padding: 5px 15px;
+    transition:0.3s;
+}
+
+.btn {
+    color: #f8f9fa;
+    border-radius: 50px;
+}
+
+.btn:hover{
+	background-color: #5ab3ae;
+	transition: 0.5s;
+	color: #f8f9fa;
+}
+
+
+@media (max-width: 1040px){
+  header{
+    padding: 12px 20px;
+  }
+
+
+  header .navigation{
+    display: none;
+  }
+
+  header .navigation.active{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.5);
+  }
+
+  header .navigation .navigation-items a{
+    color:#6c757d ;
+    font-size: 1.2em;
+    margin: 20px;
+  }
+
+  header .navigation .navigation-items a:before{
+    background: #5ab3ae;
+    height: 3px;
+  }
+
+  header .navigation.active .navigation-items{
+    background: #f8f9fa;
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  }
+
+  .menu-btn{
+    background: url(/disc/assests/Img/menu.png)no-repeat;
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .menu-btn.active{
+    z-index: 999;
+    background: url(/disc/assests/Img/close.png)no-repeat;
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+}
+ 

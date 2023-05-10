@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">    
+  <title>Login/sginup page</title>
+  <link rel="icon" href="./muwork/Img/bitcoin-logo.icon">
+  
+
+  
+</head>
+<body>
+  <div class="container">
+    <div class="backbox">
+      <div class="loginMsg">
+        <div class="textcontent">
+          <p class="title">Don't have an account?</p>
+          <p>Sign up now.</p>
+          <button id="switch1">Sign Up</button>
+        </div>
+      </div>
+      <div class="signupMsg visibility">
+        <div class="textcontent">
+          <p class="title">Have an account?</p>
+          <p>Log in to get more features.</p>
+          <button id="switch2">login</button>
+        </div>
+      </div>
+    </div>
+    <!-- backbox -->
+
+    <div class="frontbox">
+      <div class="login">
+        <h2>LOG IN</h2>
+        <div class="inputbox">
+          <input type="email" name="" id="loginemail" placeholder="  EMAIL">
+          <small id="emailer" class="emer">please enter valid email</small>
+          <input type="password" name="" id="loginpass" placeholder="  PASSWORD">
+          <span id="passworder" class="emer">insert strong password</span>
+          <div id="loginpassworder"></div>
+        </div>
+       
+        <button id="login">LOG IN</button>
+      </div>
+
+      <div class="signup hide" class="signup">
+        <h2>SIGN UP</h2>
+        <div class="inputbox">
+      
+          <input type="email" name="" id="email" placeholder="  EMAIL">
+          <small id="siemailer" class="emer">please enter valid email</small>
+          <input type="password" name="" id="pass" placeholder="  PASSWORD">
+          <span id="sipassworder" class="emer">insert strong password</span>
+          <div id="error-message"></div>
+        </div>
+        <button id="signup">SIGN UP</button>
+      </div>
+
+    </div>
+    
+  </div>
+
+  <script src="loginfunction.js"></script>
+  <script type="module" src="login.js"></script>
+</body>
+</html>

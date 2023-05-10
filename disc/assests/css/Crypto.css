@@ -1,0 +1,122 @@
+body{
+    background-color: black;
+}
+
+.BG-vid{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .BG-vid{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .BG-vid{
+        width: auto;
+        height: 100%;
+    }
+}
+
+.content{
+  margin-top: 20%;
+    padding: 0 10%;
+    color: #fff;
+    z-index: 1; 
+}
+
+.content h1{
+    font-size: 88px;
+    margin-bottom: 15px;
+}
+
+.content h1 span{
+color: #5ab3ae;
+}
+
+.content p{
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.content .btn{
+    display: inline-block;
+    margin-top: 40px;
+    background: #5ab3ae;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+}
+
+.video-container {
+    position: relative;
+    z-index: 1;
+    
+  }
+  
+  .crypto-list {
+    position: absolute;
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    z-index: 1; 
+    margin-top: 20%;
+  }
+
+
+
+
+
+
+
+      .ticker-tape {
+        width: 100%;
+        height: 20px;
+        background-color: black;
+        color: white;
+        overflow: hidden;
+        position: relative;
+        background-color: #5ab3ae;
+        padding: 15px;
+        align-items: center;
+      }
+    
+      .ticker-container {
+        white-space: nowrap;
+        position: absolute;
+        top: 3px;
+        left: 100%;
+        animation: ticker 20s linear infinite;
+        
+      }
+    
+      .ticker-item {
+        display: inline-block;
+        margin-right: 100px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    
+      #btc-price, #eth-price {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 5px;
+      }
+    
+      @keyframes ticker {
+        0% {
+          left: 100%;
+        }
+        100% {
+          left: -0%;
+        }
+      }
